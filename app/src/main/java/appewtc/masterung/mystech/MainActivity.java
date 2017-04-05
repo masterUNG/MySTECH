@@ -52,6 +52,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Log.d(tag, "You Click TextView");
         }
 
+        //For Button
+        if (view == button) {
+            Log.d(tag, "You Click Button");
+        }
+
 
     }   // onClick
 
