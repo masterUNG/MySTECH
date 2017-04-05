@@ -11,6 +11,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private EditText nameEditText, surnameEditText, addressEditText,
             userEditText, passwordEditText;
     private Button button;
+    private String nameString, surnameString, addressString,
+            userString, passwordString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,33 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View view) {
 
-        //Get Value From EditText
+        if (view == button) {
+
+            //Get Value From EditText
+            nameString = nameEditText.getText().toString().trim();
+            surnameString = surnameEditText.getText().toString().trim();
+            addressString = addressEditText.getText().toString().trim();
+            userString = userEditText.getText().toString().trim();
+            passwordString = passwordEditText.getText().toString().trim();
+
+
+            //Check Space
+            if (nameString.equals("") || surnameString.equals("") ||
+                    addressString.equals("") || userString.equals("") ||
+                    passwordString.equals("")) {
+
+                //Have Space
+                MyAlert myAlert = new MyAlert(RegisterActivity.this);
+                myAlert.myDialog("Have Space", "Please Fill All Blank");
+
+            } else {
+
+                //No Space
+
+            }
+
+
+        }
 
 
     }   // onClick
