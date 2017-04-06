@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText userEditText, passwordEditText;
     private TextView textView;
     private Button button;
+    private String userString, passwordString;
 
 
     @Override
@@ -60,9 +61,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //For Button
         if (view == button) {
             Log.d(tag, "You Click Button");
+
+            //Get Value From Edit Text
+            userString = userEditText.getText().toString().trim();
+            passwordString = passwordEditText.getText().toString().trim();
+
+            //Check Space
+            if (userString.equals("") || passwordString.equals("")) {
+                //Have Space
+                MyAlert myAlert = new MyAlert(MainActivity.this);
+                myAlert.myDialog("Have Space", "Please Fill All");
+            } else {
+                //No Space
+                checkUserAnPass();
+            }
+
+
         }
 
 
     }   // onClick
+
+    private void checkUserAnPass() {
+        try {
+
+        } catch (Exception e) {
+            Log.d("TestV2", "e check ==> " + e.toString());
+        }
+    }
 
 }   // Main Class นี่คือ คลาสหลัก
